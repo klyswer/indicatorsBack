@@ -8,8 +8,13 @@ import { AppService } from './app.service';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get('health')
+  @Get()
   health(): string {
     return this.appService.health();
+  }
+
+  @Get('indicators')
+  getData() {
+    return this.appService.getIndicators();
   }
 }
